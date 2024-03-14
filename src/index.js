@@ -6,6 +6,7 @@ import Home from "./home";
 import About from "./about";
 import Services from "./services";
 import Contact from "./contact";
+import './i18n';
 
 const App = () => {
   return (

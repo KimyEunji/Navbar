@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/joy/Box';
 import List from '@mui/joy/List';
 import ListDivider from '@mui/joy/ListDivider';
