@@ -23,6 +23,12 @@ const languageFlags = {
 
 const NavbarComponent = () => {
   const { showLanguages, toggleLanguages } = Navbar();
+  const [ t, i18n ] = useTranslation("global");
+  
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language.code);
+    toggleLanguages(); // Cerrar el menú de idiomas después de seleccionar uno
+  };
 
   return (
     <Box component="nav" aria-label="My site" className="navbar">
@@ -30,7 +36,6 @@ const NavbarComponent = () => {
         <List role="menubar" orientation="horizontal">
           <ListItem role="none">
             <ListItemButton
-              role="menuitem"
               component={Link} to="/home"
               aria-label="Home"
             >
@@ -40,39 +45,35 @@ const NavbarComponent = () => {
           <ListDivider />
           <ListItem role="none">
             <ListItemButton
-              role="menuitem"
               component={Link} to="/about"
               aria-label="About"
             >
-              Acerca
+              {t("About")}
             </ListItemButton>
           </ListItem>
           <ListDivider />
           <ListItem role="none">
             <ListItemButton
-              role="menuitem"
               component={Link} to="/services"
               aria-label="Services"
             >
-              Servicios
+              {t("Services")}
             </ListItemButton>
           </ListItem>
           <ListDivider />
           <ListItem role="none">
             <ListItemButton
-              role="menuitem"
               component={Link} to="/contact"
               aria-label="Contact"
             >
-              Contacto
+              {t("Contact")}
             </ListItemButton>
           </ListItem>
         </List>
         <ListItem role="none" className="language-icon" sx={{ marginRight: '16px' }}>
           <ListItemButton
-            role="menuitem"
             component="a"
-            href="#language"
+            href="#"
             aria-label="Language"
             onClick={toggleLanguages}
           >
@@ -81,8 +82,8 @@ const NavbarComponent = () => {
           {showLanguages && (
             <div className="languages-dropdown">
               <List>
-                {languages.map((language, index) => (
-                  <ListItem key={index} role="none">
+                {languages.map((language) => (
+                  <ListItem key={language.name} role="none" onClick={() => changeLanguage(language)}>
                     <img src={languageFlags[language.name]} alt={language.name} className="flag-icon" />
                     <span className="language-name">{language.name}</span>
                   </ListItem>
