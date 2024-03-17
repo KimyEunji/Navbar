@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { I18nextProvider } from "react-i18next";
+import i18next from "i18next"; // Asegúrate de importar i18next
 import Box from '@mui/joy/Box';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
@@ -10,7 +12,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import SpanishFlag from './icons/MX.png';
 import EnglishFlag from './icons/US.png';
 import KoreanFlag from './icons/KR.png';
-import './navbar.css'; // Importar el archivo CSS
+import './navbar.css';
 import { Navbar, languages } from './NavbarFunctions';
 
 const languageFlags = {
@@ -26,7 +28,7 @@ const NavbarComponent = () => {
   
   const changeLanguage = (language) => {
     i18n.changeLanguage(language.code);
-    toggleLanguages(); // Cerrar el menú de idiomas después de seleccionar uno
+    toggleLanguages();
   };
 
   return (
@@ -91,4 +93,12 @@ const NavbarComponent = () => {
   );
 }
 
-export default NavbarComponent;
+const App = () => {
+  return (
+    <I18nextProvider i18n={i18next}>
+      <NavbarComponent />
+    </I18nextProvider>
+  );
+}
+
+export default App;
