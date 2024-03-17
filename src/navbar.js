@@ -46,7 +46,7 @@ const NavbarComponent = () => {
               component={Link} to="/about"
               aria-label={t("translation.About")}
             >
-              {t("About")}
+              {t("translation.About")}
             </ListItemButton>
           </ListItem>
           <ListItem role="none">
@@ -54,7 +54,7 @@ const NavbarComponent = () => {
               component={Link} to="/services"
               aria-label={t("translation.Services")}
             >
-              {t("Services")}
+              {t("translation.Services")}
             </ListItemButton>
           </ListItem>
           <ListItem role="none">
@@ -62,7 +62,7 @@ const NavbarComponent = () => {
               component={Link} to="/contact"
               aria-label={t("translation.Contact")}
             >
-              {t("Contact")}
+              {t("translation.Contact")}
             </ListItemButton>
           </ListItem>
         </List>
