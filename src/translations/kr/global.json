@@ -1,13 +1,19 @@
 {
-
-        "kr": {
-            "translation": {
-                "About": "에 대한",
-                "Services": "서비스",
-                "Contact": "연락하다",
-                "Spanish": "스페인의",
-                "English": "영어",
-                "Korean": "한국인"
-            }
-          }
-}
+    "translation": {
+      "About": "에 대한",
+      "Services": "서비스",
+      "Contact": "연락하다",
+      "Spanish": "스페인의",
+      "English": "영어",
+      "Korean": "한국인",
+      "About us": "회사 소개",
+      "Learn more about our company": "우리 회사에 대해 자세히 알아보기",
+      "Contact us": "문의하기",
+      "We are happy to hear from you! Get in contact with us": "우리는 당신의 의견을 듣고 기쁘게 생각합니다! 우리에게 연락하세요",
+      "Homepage": "홈페이지",
+      "Welcome to our main page": "우리의 메인 페이지에 오신 것을 환영합니다",
+      "Our services": "우리의 서비스",
+      "Discover the services we offer": "우리가 제공하는 서비스를 알아보세요"
+    }
+  }
+  

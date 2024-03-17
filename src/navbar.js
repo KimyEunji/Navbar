@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Box from '@mui/joy/Box';
 import List from '@mui/joy/List';
-import ListDivider from '@mui/joy/ListDivider';
 import ListItem from '@mui/joy/ListItem';
 import ListItemButton from '@mui/joy/ListItemButton';
 import HomeIcon from '@mui/icons-material/Home';
@@ -23,7 +22,7 @@ const languageFlags = {
 
 const NavbarComponent = () => {
   const { showLanguages, toggleLanguages } = Navbar();
-  const [ t, i18n ] = useTranslation("global");
+  const { t, i18n } = useTranslation("global");
   
   const changeLanguage = (language) => {
     i18n.changeLanguage(language.code);
@@ -37,34 +36,31 @@ const NavbarComponent = () => {
           <ListItem role="none">
             <ListItemButton
               component={Link} to="/home"
-              aria-label="Home"
+              aria-label= "Home"
             >
               <HomeIcon />
             </ListItemButton>
           </ListItem>
-          <ListDivider />
           <ListItem role="none">
             <ListItemButton
               component={Link} to="/about"
-              aria-label="About"
+              aria-label={t("translation.About")}
             >
               {t("About")}
             </ListItemButton>
           </ListItem>
-          <ListDivider />
           <ListItem role="none">
             <ListItemButton
               component={Link} to="/services"
-              aria-label="Services"
+              aria-label={t("translation.Services")}
             >
               {t("Services")}
             </ListItemButton>
           </ListItem>
-          <ListDivider />
           <ListItem role="none">
             <ListItemButton
               component={Link} to="/contact"
-              aria-label="Contact"
+              aria-label={t("translation.Contact")}
             >
               {t("Contact")}
             </ListItemButton>
@@ -74,21 +70,19 @@ const NavbarComponent = () => {
           <ListItemButton
             component="a"
             href="#"
-            aria-label="Language"
+            aria-label={t("translation.Language")}
             onClick={toggleLanguages}
           >
             <LanguageIcon />
           </ListItemButton>
           {showLanguages && (
             <div className="languages-dropdown">
-              <List>
-                {languages.map((language) => (
-                  <ListItem key={language.name} role="none" onClick={() => changeLanguage(language)}>
-                    <img src={languageFlags[language.name]} alt={language.name} className="flag-icon" />
-                    <span className="language-name">{language.name}</span>
-                  </ListItem>
-                ))}
-              </List>
+              {languages.map((language) => (
+                <ListItem key={language.name} role="none" onClick={() => changeLanguage(language)}>
+                  <img src={languageFlags[language.name]} alt={language.name} className="flag-icon" />
+                  <span className="language-name">{language.name}</span>
+                </ListItem>
+              ))}
             </div>
           )}
         </ListItem>

@@ -1,12 +1,18 @@
 {
-        "en": {
-            "translation": {
-              "About": "About",
-              "Services": "Services",
-              "Contact": "Contact",
-              "Spanish": "Spanish",
-              "English": "English",
-              "Korean": "Korean"
-            }
-          }
+  "translation": {
+    "About": "About",
+    "Services": "Services",
+    "Contact": "Contact",
+    "Spanish": "Spanish",
+    "English": "English",
+    "Korean": "Korean",
+    "About us": "About us",
+    "Learn more about our company": "Learn more about our company.",
+    "Contact us": "Contact us",
+    "We are happy to hear from you! Get in contact with us": "We are happy to hear from you! Get in contact with us.",
+    "Homepage": "Homepage",
+    "Welcome to our main page": "Welcome to our main page",
+    "Our services": "Our services",
+    "Discover the services we offer": "Discover the services we offer."
+  }
 }

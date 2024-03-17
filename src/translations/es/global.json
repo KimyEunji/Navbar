@@ -1,12 +1,18 @@
 {
-        "es": {
-            "translation": {
-              "About": "Acerca",
-              "Services": "Servicios",
-              "Contact": "Contacto",
-              "Spanish": "Español",
-              "English": "Ingles",
-              "Korean": "Coreano"
-            }
-        }
+  "translation": {
+    "About": "Acerca",
+    "Services": "Servicios",
+    "Contact": "Contacto",
+    "Spanish": "Español",
+    "English": "Ingles",
+    "Korean": "Coreano",
+    "About us": "Acerca de nosotros",
+    "Learn more about our company": "Conoce más sobre nuestra empresa.",
+    "Contact us": "Contáctanos",
+    "We are happy to hear from you! Get in contact with us": "¡Estamos encantados de escucharte! Ponte en contacto con nosotros.",
+    "Homepage": "Página de inicio",
+    "Welcome to our main page": "Bienvenido a nuestra página principal.",
+    "Our services": "Nuestros servicios",
+    "Discover the services we offer": "Descubre los servicios que ofrecemos."
+  }
 }
