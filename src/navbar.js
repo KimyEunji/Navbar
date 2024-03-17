@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { I18nextProvider } from "react-i18next";
-import i18next from "i18next"; // Asegúrate de importar i18next
+import i18next from "i18next";
 import Box from '@mui/joy/Box';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
@@ -13,7 +13,29 @@ import SpanishFlag from './icons/MX.png';
 import EnglishFlag from './icons/US.png';
 import KoreanFlag from './icons/KR.png';
 import './navbar.css';
-import { Navbar, languages } from './NavbarFunctions';
+import { languages } from './NavbarFunctions';
+
+// Importa los recursos de idioma global
+import global_es from './translations/es/global.json';
+import global_en from './translations/en/global.json';
+import global_kr from './translations/kr/global.json';
+
+// Inicializa i18next con los recursos de idioma
+i18next.init({
+  interpolation: { escapeValue: false },
+  lng: "kr",
+  resources: {
+    es: {
+      global: global_es
+    },
+    en: {
+      global: global_en
+    },
+    kr: {
+      global: global_kr
+    }
+  }
+});
 
 const languageFlags = {
   'Español': SpanishFlag,
@@ -23,12 +45,22 @@ const languageFlags = {
 };
 
 const NavbarComponent = () => {
-  const { showLanguages, toggleLanguages } = Navbar();
+  const [showLanguages, setShowLanguages] = useState(false); // Estado para controlar la visibilidad del menú de idiomas
   const { t, i18n } = useTranslation("global");
   
   const changeLanguage = (language) => {
-    i18n.changeLanguage(language.code);
-    toggleLanguages();
+    if (language.code === 'es') {
+      i18n.changeLanguage('es');
+    } else if (language.code === 'en') {
+      i18n.changeLanguage('en');
+    } else if (language.code === 'kr') {
+      i18n.changeLanguage('kr');
+    }
+    setShowLanguages(false); // Oculta el menú de idiomas después de seleccionar un idioma
+  };
+
+  const toggleLanguages = () => {
+    setShowLanguages(!showLanguages); // Cambia el estado de showLanguages para mostrar u ocultar el menú de idiomas
   };
 
   return (
