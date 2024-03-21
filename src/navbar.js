@@ -9,6 +9,8 @@ import ListItem from '@mui/joy/ListItem';
 import ListItemButton from '@mui/joy/ListItemButton';
 import HomeIcon from '@mui/icons-material/Home';
 import LanguageIcon from '@mui/icons-material/Language';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import SpanishFlag from './icons/MX.png';
 import EnglishFlag from './icons/US.png';
 import KoreanFlag from './icons/KR.png';
@@ -46,6 +48,7 @@ const languageFlags = {
 
 const NavbarComponent = () => {
   const [showLanguages, setShowLanguages] = useState(false); // Estado para controlar la visibilidad del menú de idiomas
+  const [darkMode, setDarkMode] = useState(false); // Estado para controlar el modo oscuro
   const { t, i18n } = useTranslation("global");
   
   const changeLanguage = (language) => {
@@ -63,14 +66,18 @@ const NavbarComponent = () => {
     setShowLanguages(!showLanguages); // Cambia el estado de showLanguages para mostrar u ocultar el menú de idiomas
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode); // Cambia el estado de darkMode para alternar entre modos claro y oscuro
+  };
+
   return (
-    <Box component="nav" aria-label="My site" className="navbar">
+    <Box component="nav" aria-label="My site" className={`navbar ${darkMode ? 'dark-mode' : ''}`}>
       <Box display="flex" justifyContent="space-between" alignItems="center" width="100%">
         <List role="menubar" orientation="horizontal">
           <ListItem role="none">
             <ListItemButton
               component={Link} to="/home"
-              aria-label= "Home"
+              aria-label= {t("translation.Home")}
             >
               <HomeIcon />
             </ListItemButton>
@@ -119,6 +126,14 @@ const NavbarComponent = () => {
               ))}
             </div>
           )}
+        </ListItem>
+        <ListItem role="none" className="dark-mode-icon">
+          <ListItemButton
+            aria-label={darkMode ? t("translation.LightMode") : t("translation.DarkMode")}
+            onClick={toggleDarkMode}
+          >
+            {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+          </ListItemButton>
         </ListItem>
       </Box>
     </Box>

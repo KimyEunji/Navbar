@@ -1,18 +1,8 @@
-import React, { useState } from 'react';
-
-export const Navbar = () => {
-  const [showLanguages, setShowLanguages] = useState(false);
-
-  const toggleLanguages = () => {
-    setShowLanguages(!showLanguages);
-  };
-
-  return { showLanguages, toggleLanguages };
-};
-
+// NavbarFunctions.js
 export const languages = [
-  { name: 'Español', emoji: '🇪🇸' },
-  { name: 'Inglés', emoji: '🇬🇧' },
-  { name: 'Coreano', emoji: 'KR' },
-  // Agrega más idiomas si lo deseas
+  { name: 'Español', code: 'es' },
+  { name: 'Inglés', code: 'en' },
+  { name: 'Coreano', code: 'kr' },
+  // Agrega más idiomas si es necesario
 ];
+
