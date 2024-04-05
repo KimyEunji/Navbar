@@ -79,7 +79,7 @@ const NavbarComponent = () => {
               component={Link} to="/home"
               aria-label= {t("translation.Home")}
             >
-              <HomeIcon />
+              <HomeIcon sx={{ color: darkMode ? '#99ccff' : '' }} />
             </ListItemButton>
           </ListItem>
           <ListItem role="none">
@@ -87,7 +87,7 @@ const NavbarComponent = () => {
               component={Link} to="/about"
               aria-label={t("translation.About")}
             >
-              {t("translation.About")}
+              <span style={{ color: darkMode ? '#99ccff' : '' }}>{t("translation.About")}</span>
             </ListItemButton>
           </ListItem>
           <ListItem role="none">
@@ -95,7 +95,7 @@ const NavbarComponent = () => {
               component={Link} to="/services"
               aria-label={t("translation.Services")}
             >
-              {t("translation.Services")}
+              <span style={{ color: darkMode ? '#99ccff' : '' }}>{t("translation.Services")}</span>
             </ListItemButton>
           </ListItem>
           <ListItem role="none">
@@ -103,7 +103,7 @@ const NavbarComponent = () => {
               component={Link} to="/contact"
               aria-label={t("translation.Contact")}
             >
-              {t("translation.Contact")}
+              <span style={{ color: darkMode ? '#99ccff' : '' }}>{t("translation.Contact")}</span>
             </ListItemButton>
           </ListItem>
         </List>
@@ -114,14 +114,14 @@ const NavbarComponent = () => {
             aria-label={t("translation.Language")}
             onClick={toggleLanguages}
           >
-            <LanguageIcon />
+            <LanguageIcon sx={{ color: darkMode ? '#99ccff' : '' }} />
           </ListItemButton>
           {showLanguages && (
-            <div className="languages-dropdown">
+            <div className={`languages-dropdown ${darkMode ? 'dark-mode' : ''}`}>
               {languages.map((language) => (
                 <ListItem key={language.name} role="none" onClick={() => changeLanguage(language)}>
                   <img src={languageFlags[language.name]} alt={language.name} className="flag-icon" />
-                  <span className="language-name">{language.name}</span>
+                  <span className="language-name" style={{ color: darkMode ? '#99ccff' : '' }}>{language.name}</span>
                 </ListItem>
               ))}
             </div>
@@ -132,7 +132,7 @@ const NavbarComponent = () => {
             aria-label={darkMode ? t("translation.LightMode") : t("translation.DarkMode")}
             onClick={toggleDarkMode}
           >
-            {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+            {darkMode ? <Brightness7Icon sx={{ color: '#99ccff' }} /> : <Brightness4Icon sx={{ color: '#99ccff' }} />}
           </ListItemButton>
         </ListItem>
       </Box>

@@ -3,8 +3,9 @@
   border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sólido con sombra */
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(8, 183, 210, 0.942); /* Sombra */
-  background-color: #fff; /* Fondo blanco */
+  background-color: #fff; /* Fondo blanco en modo claro */
   padding: 10px; /* Espacio interior */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
 }
 
 .navbar.dark-mode {
@@ -15,12 +16,16 @@
   position: absolute;
   top: calc(100% + 8px); /* distancia desde el borde superior del navbar */
   right: 0;
-  background-color: white;
+  background-color: #fff; /* Fondo blanco en modo claro */
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(12, 180, 206, 0.65);
   padding: 8px;
   z-index: 999;
+}
+
+.languages-dropdown.dark-mode {
+  background-color: #333; /* Fondo oscuro en modo oscuro */
 }
 
 .languages-dropdown ul {
@@ -42,4 +47,25 @@
 
 .language-name {
   margin-left: 8px; /* Espacio entre el emoji y el nombre del idioma */
+  color: #007bff; /* Color de texto azul claro */
+}
+
+.language-name.dark-mode {
+  color: #0ff; /* Color de texto azul claro en modo oscuro */
+}
+
+.dark-mode-icon {
+  color: #000; /* Color de icono oscuro original */
+}
+
+.dark-mode-icon:hover {
+  color: #007bff; /* Color del icono al pasar el mouse en modo claro */
+}
+
+.dark-mode-icon.dark-mode {
+  color: #0ff; /* Color del icono en modo oscuro */
+}
+
+.dark-mode-icon.dark-mode:hover {
+  color: #00f; /* Color del icono al pasar el mouse en modo oscuro */
 }
